@@ -1,4 +1,4 @@
-package com.noxis.national_food.domain.model
+package com.noxis.nationalfood.domain.model
 
 data class NationalFoodsType(
     val id: Long,

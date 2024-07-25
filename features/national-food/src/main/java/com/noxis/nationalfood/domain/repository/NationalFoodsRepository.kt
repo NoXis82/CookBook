@@ -1,8 +1,8 @@
-package com.noxis.national_food.domain.repository
+package com.noxis.nationalfood.domain.repository
 
 import com.noxis.domain.utils.RepositoryError
 import com.noxis.domain.utils.RequestResult
-import com.noxis.national_food.domain.model.NationalFoodsType
+import com.noxis.nationalfood.domain.model.NationalFoodsType
 import kotlinx.coroutines.flow.Flow
 
 interface NationalFoodsRepository {
