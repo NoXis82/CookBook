@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CookBook"
 include(":app")
- 
+include(":features:national_foods:domain")
