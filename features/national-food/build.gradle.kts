@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.noxis.national_food"
+    namespace = "com.noxis.nationalfood"
     compileSdk = 34
 
     defaultConfig {

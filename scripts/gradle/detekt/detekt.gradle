@@ -1,0 +1,12 @@
+allprojects {
+    apply plugin: 'io.gitlab.arturbosch.detekt'
+
+    detekt {
+        toolVersion = libs.versions.detekt.get()
+        parallel = true
+        ignoreFailures = true
+        source.setFrom("src/main/java", "src/main/kotlin")
+        config.setFrom(rootProject.files("scripts/gradle/detekt/detekt-config.yml"))
+        buildUponDefaultConfig = true
+    }
+}
