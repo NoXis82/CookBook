@@ -1,0 +1,20 @@
+android {
+    lintOptions {
+        // Отключает отчет о ходе анализа
+        quiet true
+        // Останавливать сборку при обнаружении ошибки
+        abortOnError false
+        //
+        checkReleaseBuilds false
+        // Проверки тестов
+        ignoreTestSources true
+        //
+        checkGeneratedSources false
+        //
+        checkDependencies false
+        //
+        lintConfig file("$rootDir/scripts/gradle/lint/lint_config.xml")
+        //
+        xmlOutput file("build/reports/lint-report.xml")
+    }
+}

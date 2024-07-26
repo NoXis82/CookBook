@@ -10,3 +10,4 @@ plugins {
 }
 
 apply(from = "scripts/gradle/detekt/detekt.gradle")
+apply(from = "scripts/gradle/lint/lint.gradle")
