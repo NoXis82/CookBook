@@ -1,0 +1,17 @@
+# Останавливает дальнейший поиск файлов .editorconfig в каталогах, находящихся в пути выше проекта
+root = true
+
+# для каждого файла
+[*]
+# добавляем пустую строку в конец файла
+insert_final_newline = true
+# обрезаем лишние пробелы в конце строки
+trim_trailing_whitespace = true
+# максимальная длина строки
+max_line_length = 80
+# не форматируем json
+[*.json]
+insert_final_newline = false
+# сохраняем форматирование для markdown
+[*.md]
+trim_trailing_whitespace = false

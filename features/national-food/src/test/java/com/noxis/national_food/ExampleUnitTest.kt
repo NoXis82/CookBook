@@ -1,4 +1,4 @@
-package com.noxis.cookbook
+package com.noxis.national_food
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

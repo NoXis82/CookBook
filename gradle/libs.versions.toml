@@ -13,6 +13,8 @@ material = "1.10.0"
 room = "2.6.1"
 hilt = "2.46"
 jetbrainsKotlinJvm = "1.9.0"
+kotlinxCoroutinesCore = "1.8.0"
+detekt = "1.23.6"
 
 
 [libraries]
@@ -32,6 +34,8 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
+
 #Room
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
@@ -47,3 +51,4 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 androidx-room = { id = "androidx.room", version.ref = "room" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
