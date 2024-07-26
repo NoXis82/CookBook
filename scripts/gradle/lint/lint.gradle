@@ -1,0 +1,12 @@
+subprojects { subproject ->
+    subproject.plugins.whenPluginAdded { plugin ->
+        if (isAndroidLibraryPlugin(plugin)) {
+            subproject.apply from: "$rootDir/scripts/gradle/lint/lint_options.gradle"
+        }
+    }
+}
+
+static boolean isAndroidLibraryPlugin(Plugin plugin) {
+    plugin.getClass().canonicalName in ["com.android.build.gradle.LibraryPlugin",
+                                        "com.android.build.gradle.AppPlugin"]
+}
