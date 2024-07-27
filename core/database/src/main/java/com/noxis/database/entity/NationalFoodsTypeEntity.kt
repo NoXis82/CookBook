@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity("national_foods_type")
-data class NationalFoodsTypeDBO(
+data class NationalFoodsTypeEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo("id")
     val id: Long,
