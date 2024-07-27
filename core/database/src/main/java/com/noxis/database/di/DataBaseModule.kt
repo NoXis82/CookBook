@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.noxis.database.dao.CookBookDao
 import com.noxis.database.db.CookBookDataBase
-import com.noxis.database.db.CookBookDataBase.Companion.MIGRATION_1_2
+import com.noxis.database.db.CookBookRoomDataBase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,20 +19,21 @@ object DataBaseModule {
     @Singleton
     @Provides
     fun provideCookBookDatabase(@ApplicationContext context: Context): CookBookDataBase {
-        return Room.databaseBuilder(
+        val ss = Room.databaseBuilder(
             context,
-            CookBookDataBase::class.java,
-            CookBookDataBase.DB_NAME
+            CookBookRoomDataBase::class.java,
+            CookBookRoomDataBase.DB_NAME
         )
-            //.addMigrations(MIGRATION_1_2)
             .allowMainThreadQueries()
             .build()
+
+        return CookBookDataBase(ss)
     }
 
     @Singleton
     @Provides
     fun provideCookBookDao(cookBookDatabase: CookBookDataBase): CookBookDao {
-        return cookBookDatabase.cookBookDao()
+        return cookBookDatabase.cookBookDao
     }
 
 }
