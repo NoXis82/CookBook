@@ -11,18 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.noxis.cookbook.ui.theme.CookBookTheme
-import com.noxis.database.dao.CookBookDao
-import com.noxis.database.entity.NationalFoodsTypeEntity
-import com.noxis.nationalfood.domain.model.NationalFoodsTypeModel
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
-import javax.inject.Inject
-import javax.inject.Provider
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
