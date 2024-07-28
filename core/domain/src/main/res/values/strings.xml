@@ -1,5 +1,17 @@
 <resources>
     <!--  National foods tpe  -->
-
+    <string name="russian_and_soviet_food">Русская и Советская кухни</string>
+    <string name="ukrainian_food">Украинская кухня</string>
+    <string name="belarusian_food">Белорусская кухня</string>
+    <string name="moldavian_food">Молдавская кухня</string>
+    <string name="trans_caucasian_food">Завкавказские кухни</string>
+    <string name="kazakh_and_kyrgyz_food">Казачская и Киргизская кухни</string>
+    <string name="central_asian_food">Среднеазиатские кухни</string>
+    <string name="baltic_food">Прибалтийские кухни</string>
+    <string name="finno_ugric_peoples_food">Кухня Финно-Угорских народов России</string>
+    <string name="turkic_speack_peoples_food">Кухни Тюркоязычных народов России</string>
+    <string name="polar_food">Заполярная кухня</string>
+    <string name="mongolian_food">Монгольская кухня</string>
+    <string name="jewish_food">Еврейская кухня</string>
     <!-- END -->
 </resources>
