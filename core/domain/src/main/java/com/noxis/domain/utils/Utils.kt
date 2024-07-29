@@ -4,8 +4,8 @@ import java.io.IOException
 
 
 fun Throwable.onRepositoryError(): RepositoryError {
-    return when(this) {
-       //TODO тут расширить обработку ошибок
+    return when (this) {
+        //TODO тут расширить обработку ошибок
         is IOException -> {
             RepositoryError.DataBaseError.SQLITE_ERROR
         }

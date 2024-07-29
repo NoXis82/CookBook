@@ -14,4 +14,7 @@
     <string name="mongolian_food">Монгольская кухня</string>
     <string name="jewish_food">Еврейская кухня</string>
     <!-- END -->
+    <!-- Message error   -->
+    <string name="error_sql_database">Ошибка БД</string>
+    <!--    -->
 </resources>
