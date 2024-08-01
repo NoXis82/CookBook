@@ -2,7 +2,8 @@ package com.noxis.nationalfood.domain.model
 
 data class NationalFoodsTypeModel(
     val id: Long = ID_NONE,
-    val name: String
+    val name: String,
+    val countRecipe: Int = 0
 ) {
     companion object {
         /**
