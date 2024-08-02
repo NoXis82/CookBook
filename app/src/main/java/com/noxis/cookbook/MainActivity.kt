@@ -4,13 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Modifier
+import com.noxis.cookbook.navigation.NavigateRoot
 import com.noxis.cookbook.ui.theme.CookBookTheme
-import com.noxis.nationalfood.presentation.components.NationalFoodsMenuScreen
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.serialization.Serializable
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -19,14 +16,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CookBookTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    NationalFoodsMenuScreen(
-                        modifier = Modifier.padding(
-                            innerPadding
-                        )
-                    )
-                }
+                NavigateRoot()
             }
         }
     }
 }
+
+@Serializable
+object NationalFoodsMenuScreen
