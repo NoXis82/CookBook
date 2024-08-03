@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import com.noxis.cookbook.navigation.NavigateRoot
 import com.noxis.cookbook.ui.theme.CookBookTheme
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.serialization.Serializable
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -21,6 +20,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-@Serializable
-object NationalFoodsMenuScreen

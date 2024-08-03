@@ -5,9 +5,8 @@ import kotlinx.serialization.Serializable
 sealed interface Root {
 
     @Serializable
-    data object NationalFoodsMenuScreen: Root
+    data object NationalFoodsMenuScreen : Root
 
     @Serializable
-    data object SplashScreen: Root
-
+    data object SplashScreen : Root
 }
