@@ -13,5 +13,6 @@ fun NavigateRoot() {
         startDestination = NationalFoodsMenuScreen
     ) {
         nationalFoodsMenuScreen()
+        splashScreen()
     }
 }
