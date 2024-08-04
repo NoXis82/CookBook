@@ -17,8 +17,6 @@ object NationalFoodsTypeModule {
     @Provides
     @Singleton
     fun provideNationalFoodsTypeRepository(db: CookBookDataBase): NationalFoodsRepository {
-        return NationalFoodsRepositoryImpl(
-            db.cookBookDao
-        )
+        return NationalFoodsRepositoryImpl(db.cookBookDao)
     }
 }

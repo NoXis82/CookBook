@@ -54,6 +54,9 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.navigation.compose)
+    implementation(project(":core:domain"))
+    implementation(project(":core:database"))
+    implementation(project(":core:presentation"))
 
     testImplementation(libs.junit)
 }
