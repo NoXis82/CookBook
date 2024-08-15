@@ -79,6 +79,7 @@ dependencies {
     implementation(project(":core:database"))
     implementation(project(":core:presentation"))
     implementation(project(":features:national-food"))
+    implementation(project(":features:splash"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

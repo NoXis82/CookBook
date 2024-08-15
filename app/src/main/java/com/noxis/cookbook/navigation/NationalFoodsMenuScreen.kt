@@ -6,11 +6,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.noxis.cookbook.NationalFoodsMenuScreen
 import com.noxis.nationalfood.presentation.components.NationalFoodsMenuScreen
 
 fun NavGraphBuilder.nationalFoodsMenuScreen() {
-    composable<NationalFoodsMenuScreen> {
+    composable<Root.NationalFoodsMenuScreen> {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             NationalFoodsMenuScreen(
                 modifier = Modifier.padding(
