@@ -21,8 +21,6 @@ fun NationalFoodsType.asUiText(): UiText {
         NationalFoodsType.CENTRAL_ASIAN_FOOD -> UiText.StringResource(R.string.central_asian_food)
         NationalFoodsType.BALTIC_FOOD -> UiText.StringResource(R.string.baltic_food)
         NationalFoodsType.FINNO_UGRIC_PEOPLES_FOOD -> UiText.StringResource(R.string.finno_ugric_peoples_food)
-        NationalFoodsType.TURKIC_SPEAK_PEOPLES_FOOD -> UiText.StringResource(R.string.turkic_speack_peoples_food)
-        NationalFoodsType.POLAR_FOOD -> UiText.StringResource(R.string.polar_food)
         NationalFoodsType.MONGOLIAN_FOOD -> UiText.StringResource(R.string.mongolian_food)
         NationalFoodsType.JEWISH_FOOD -> UiText.StringResource(R.string.jewish_food)
     }
