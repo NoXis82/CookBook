@@ -19,7 +19,8 @@ hiltNavigation = "1.2.0"
 composeKotlin = "1.5.1"
 composeNavigation = "2.8.0-alpha08"
 serialization = "1.6.3"
-splashscreen = "1.0.1"
+retromock = "1.1.0"
+retrofit = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,6 +51,10 @@ room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" }
+#Retromock
+retromock = { module = "co.infinum:retromock", version.ref = "retromock" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 
 
 [plugins]
