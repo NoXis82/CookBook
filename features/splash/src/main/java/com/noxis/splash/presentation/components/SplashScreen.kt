@@ -1,7 +1,6 @@
 package com.noxis.splash.presentation.components
 
-import android.util.Log
-import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,56 +15,35 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.noxis.splash.R
-import com.noxis.splash.presentation.state.SplashScreenUiState
-import com.noxis.splash.presentation.viewmodel.SplashScreenViewModel
 import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(
     navigateToNext: () -> Unit
 ) {
-    val viewModel: SplashScreenViewModel = hiltViewModel()
-
-    SplashScreenContent(
-        stateUi = viewModel.state,
-        navigateToNext = { navigateToNext.invoke() }
-    )
-
+    SplashScreenContent { navigateToNext.invoke() }
 }
 
 @Composable
 internal fun SplashScreenContent(
-    stateUi: SplashScreenUiState,
     navigateToNext: () -> Unit
 ) {
     var startAnimation by remember { mutableStateOf(false) }
-    val alphaAnimated = remember {
-        Animatable(0f)
-    }
+    val alphaAnimated by animateFloatAsState(
+        targetValue = if (startAnimation) 1f else 0f,
+        animationSpec = tween(1500),
+        label = "alpha"
+    )
 
-    LaunchedEffect(key1 = true) {
-        alphaAnimated.animateTo(
-            if (startAnimation) 0f else 1f,
-            animationSpec = tween(2000)
-        )
+    LaunchedEffect(true) {
         startAnimation = true
-    }
-
-    LaunchedEffect(stateUi) {
-        delay(1500)
-        when {
-            stateUi.navigateToNext -> navigateToNext.invoke()
-
-            stateUi.error != null -> {
-                Log.d("TAG", "SplashScreenContent: ${stateUi.error}")
-            }
-        }
+        delay(1800)
+        navigateToNext.invoke()
     }
 
     Box(
@@ -78,9 +56,10 @@ internal fun SplashScreenContent(
             painter = painterResource(id = R.drawable.ic_logos),
             modifier = Modifier
                 .size(120.dp)
-                .alpha(alpha = alphaAnimated.value),
+                .graphicsLayer {
+                    alpha = alphaAnimated
+                },
             contentDescription = null
         )
-
     }
 }

@@ -1,0 +1,48 @@
+{
+  "content": [
+    {
+      "id": "1",
+      "name": "RUSSIAN_AND_SOVIET_FOOD"
+    },
+    {
+      "id": "2",
+      "name": "UKRAINIAN_FOOD"
+    },
+    {
+      "id": "3",
+      "name": "BELARUSIAN_FOOD"
+    },
+    {
+      "id": "4",
+      "name": "MOLDAVIAN_FOOD"
+    },
+    {
+      "id": "5",
+      "name": "TRANS_CAUCASIAN_FOOD"
+    },
+    {
+      "id": "6",
+      "name": "KAZAKH_AND_KYRGYZ_FOOD"
+    },
+    {
+      "id": "7",
+      "name": "CENTRAL_ASIAN_FOOD"
+    },
+    {
+      "id": "8",
+      "name": "BALTIC_FOOD"
+    },
+    {
+      "id": "9",
+      "name": "FINNO_UGRIC_PEOPLES_FOOD"
+    },
+    {
+      "id": "10",
+      "name": "MONGOLIAN_FOOD"
+    },
+    {
+      "id": "11",
+      "name": "JEWISH_FOOD"
+    }
+  ]
+}

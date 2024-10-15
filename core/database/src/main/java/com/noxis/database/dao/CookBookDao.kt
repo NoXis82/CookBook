@@ -12,4 +12,8 @@ interface CookBookDao : BaseDao<NationalFoodsTypeEntity> {
 
     @Query("SELECT * FROM national_foods_type")
     suspend fun getAllNationalFoodsType(): List<NationalFoodsTypeEntity>
+
+    @Query("SELECT COUNT(*) FROM national_foods_type")
+    suspend fun checkCountItems(): Int
+
 }
