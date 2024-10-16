@@ -28,6 +28,8 @@ import com.noxis.nationalfood.domain.model.NationalFoodsTypeModel
 import com.noxis.nationalfood.presentation.event.NationalFoodsUiEvent
 import com.noxis.nationalfood.presentation.state.NationalFoodsUiState
 import com.noxis.nationalfood.presentation.viewmodel.NationalFoodsViewModel
+import com.noxis.presentation.components.ErrorScreen
+import com.noxis.presentation.components.LoadingScreen
 import com.noxis.presentation.util.asUiPainter
 import com.noxis.presentation.util.asUiText
 
@@ -48,23 +50,35 @@ fun NationalFoodsMenuContent(
     modifier: Modifier = Modifier,
     stateUi: NationalFoodsUiState
 ) {
+    when {
+        stateUi.type.isNotEmpty() -> {
+            Box(
+                modifier = modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+            ) {
+                LazyVerticalGrid(
+                    columns = GridCells.Fixed(2),
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    items(stateUi.type) { item ->
+                        ItemCard(item = item)
+                    }
 
-    Box(
-        modifier = modifier
-            .fillMaxSize()
-            .padding(16.dp)
-    ) {
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            items(stateUi.type) { item ->
-                ItemCard(item = item)
+                }
             }
+        }
 
+        stateUi.isLoading -> {
+            LoadingScreen()
+        }
+
+        stateUi.error != null -> {
+            ErrorScreen(error = stateUi.error.toString())
         }
     }
+
 }
 
 @Composable
@@ -86,7 +100,7 @@ fun ItemCard(item: NationalFoodsTypeModel) {
             text = nationalFoodsType.asUiText().asString(),
             textAlign = TextAlign.Center,
         )
-        Text(text = item.countRecipe.toString())
+       // Text(text = item.countRecipe.toString())
     }
 }
 

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.kapt)
 }
@@ -54,10 +55,16 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.navigation.compose)
+    //Retromock
+    implementation(libs.retromock)
+    implementation(libs.retrofit)
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(project(":core:domain"))
     implementation(project(":core:database"))
     implementation(project(":core:presentation"))
+    implementation(project(":core:network"))
+
     testImplementation(libs.junit)
     debugImplementation(libs.androidx.ui.tooling)
 }

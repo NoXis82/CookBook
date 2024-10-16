@@ -8,6 +8,7 @@ import com.noxis.nationalfood.presentation.state.NationalFoodsUiState
 import com.noxis.presentation.viewmodel.StateAndEventViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Provider
@@ -30,17 +31,20 @@ class NationalFoodsViewModel @Inject internal constructor(
         viewModelScope.launch {
             nationalFoodsRepository.get()
                 .getAllNationalFoodsType()
+                .onStart {
+                    updateUIState { copy(isLoading = true) }
+                }
                 .collectLatest { result ->
                     when (result) {
                         is RequestResult.Success -> {
                             updateUIState {
-                                copy(error = null, type = result.data)
+                                copy(error = null, type = result.data, isLoading = false)
                             }
                         }
 
                         is RequestResult.Error -> {
                             updateUIState {
-                                copy(error = result.error)
+                                copy(error = result.error, isLoading = false)
                             }
                         }
                     }
